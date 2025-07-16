@@ -18,6 +18,10 @@
     "buffer",
     "image-processing"
   ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "license": "MIT",
   "homepage": "https://github.com/hxxyyyang/ai-color-correction",
   "author": {
