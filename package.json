@@ -1,0 +1,38 @@
+{
+  "name": "ai-color-correction",
+  "version": "1.0.0",
+  "description": "A small utility to correct yellow tint in GPT-generated images.",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "gpt",
+    "image",
+    "color",
+    "fix",
+    "yellow",
+    "tint",
+    "jimp",
+    "buffer",
+    "image-processing"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/hxxyyyang/ai-color-correction",
+  "author": {
+    "name": "hxxyyyang",
+    "email": "hxxyyyang@163.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com:hxxyyyang/ai-color-correction.git"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.14",
+    "tsx": "^4.20.3"
+  },
+  "dependencies": {
+    "jimp": "^1.6.0"
+  }
+}
