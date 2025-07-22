@@ -1,11 +1,13 @@
 {
   "name": "ai-color-correction",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A small utility to correct yellow tint in GPT-generated images.",
-  "main": "dist/index.js",
   "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsup"
   },
   "keywords": [
     "gpt",
@@ -34,7 +36,9 @@
   },
   "devDependencies": {
     "@types/node": "^24.0.14",
-    "tsx": "^4.20.3"
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "tsup": "^8.5.0"
   },
   "dependencies": {
     "jimp": "^1.6.0"
