@@ -12,10 +12,12 @@ const DEFAULT_COLOR_BALANCE: ColorBalance = {
   highlights: { red: -6, green: 0, blue: 15 }
 }
 
-export type CorrectedImage = Awaited<ReturnType<typeof Jimp.read>>
-
-export default async function correctColor(input: Buffer | string, colorBalance: ColorBalance = DEFAULT_COLOR_BALANCE): Promise<CorrectedImage> {
-  const image = await Jimp.read(input)
+export async function correctColor(
+  buffer: Buffer,
+  mimeType: "image/bmp" | "image/tiff" | "image/x-ms-bmp" | "image/gif" | "image/jpeg" | "image/png",
+  colorBalance: ColorBalance = DEFAULT_COLOR_BALANCE
+): Promise<Buffer> {
+  const image = await Jimp.read(buffer)
 
   image.scan(0, 0, image.bitmap.width, image.bitmap.height, function (x, y, i) {
     const pixels = image.bitmap.data
@@ -66,5 +68,5 @@ export default async function correctColor(input: Buffer | string, colorBalance:
     pixels[i + 2] = newB;
   })
 
-  return image
+  return image.getBuffer(mimeType)
 }
